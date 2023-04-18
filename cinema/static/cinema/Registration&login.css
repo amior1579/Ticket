@@ -1,0 +1,11 @@
+label{
+    display: block;
+    padding: 5px;
+}
+
+
+.div_registration_form{
+    display: inline-block;
+    border: solid 1px;
+    padding: 18px;
+}

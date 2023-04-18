@@ -1,0 +1,22 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Registration</title>
+        <link rel="stylesheet" href="{% static 'cinema/Registration&login.css' %}">
+    </head>
+    <body>
+        <div class="div_registration_form">
+            <form action="{% url 'registration' %}" method="post">
+                {% csrf_token %}
+                <label>First name:       <input type="text"     name="first_name">   </label>
+                <label>Last name:        <input type="text"     name="last_name">    </label>
+                <label>Email:            <input type="email"    name="email">        </label>
+                <label>Password:         <input type="password" name="password">     </label>
+                <label>Confirm Password: <input type="password" name="confirmation"> </label>
+                <button type="submit">Register Now</button>
+            </form>
+        </div>
+</body>
+</html>
