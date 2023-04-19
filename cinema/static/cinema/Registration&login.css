@@ -4,7 +4,7 @@ label{
 }
 
 
-.div_registration_form{
+.div_registration_form, .div_login_form{
     display: inline-block;
     border: solid 1px;
     padding: 18px;

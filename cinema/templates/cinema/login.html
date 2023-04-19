@@ -1,0 +1,20 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Login</title>
+    <link rel="stylesheet" href="{% static 'cinema/Registration&login.css' %}">
+</head>
+<body>
+    <div class="div_login_form">
+        <h3>{{message}}</h3>
+        <form action="{% url 'user_login' %}" method="post">
+            {% csrf_token %}
+            <label>Username: <input type="text"     name="username"> </label>
+            <label>Password: <input type="password" name="password"> </label>
+            <button type="submit">Login Now</button>
+        </form>
+    </div>
+</body>
+</html>
