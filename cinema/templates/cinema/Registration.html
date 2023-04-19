@@ -10,6 +10,7 @@
         <div class="div_registration_form">
             <form action="{% url 'registration' %}" method="post">
                 {% csrf_token %}
+                <label>Username:         <input type="text"     name="username">     </label>
                 <label>First name:       <input type="text"     name="first_name">   </label>
                 <label>Last name:        <input type="text"     name="last_name">    </label>
                 <label>Email:            <input type="email"    name="email">        </label>
