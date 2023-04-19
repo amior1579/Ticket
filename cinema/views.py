@@ -11,6 +11,7 @@ def index(request):
 
 def registration(request):
     if request.method == 'POST':
+        username       = request.POST['username']
         first_name     = request.POST['first_name']
         last_name      = request.POST['last_name']
         email          = request.POST['email']
@@ -20,7 +21,9 @@ def registration(request):
             pass
     
         else:
-            user = Users.objects.create_user(first_name,last_name,email,password)
+            user = Users.objects.create_user(username,email,password)
+            user.first_name = first_name
+            user.last_name = last_name
             user.save()
             login(request, user)
             return HttpResponseRedirect(reverse('index'))
