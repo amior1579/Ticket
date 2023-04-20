@@ -7,4 +7,9 @@ urlpatterns = [
     path('registration_page', views.registration_page, name='registration_page'),
     path('user_login', views.user_login, name='user_login'),
     path('login_page', views.login_page, name='login_page'),
+
+
+    #API
+    path('users_serializer', views.users_serializer, name='users_serializer'),
+
 ]
