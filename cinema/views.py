@@ -1,8 +1,10 @@
 from django.shortcuts import render, redirect
 from django.contrib.auth import authenticate, login, logout
 from django.urls import reverse
-from django.http import HttpResponseRedirect
+from django.http import HttpResponseRedirect, JsonResponse
 from .models import *
+from .serializers import *
+
 
 def index(request):
     return render(request, 'cinema/index.html',{
@@ -61,3 +63,10 @@ def login_page(request):
     return render(request, 'cinema/login.html',{
         
     })
+
+
+def users_serializer(request):
+    if request.method == 'GET':
+        users = Users.objects.all()
+        serializer = UsersSerializer(users, many=True)
+        return JsonResponse(serializer.data, safe=False)
